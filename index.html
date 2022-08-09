@@ -22,8 +22,8 @@
     </div>
 
 
-	<el-affix :offset="180">
-	  <el-tabs v-model="activeSection" @tab-click="handleClick" :tab-position="'right'" style="height: 200px" class="demo-tabs">
+	<el-affix>
+	  <el-tabs v-model="activeSection" @tab-click="handleClick" :tab-position="'right'" class="demo-tabs">
 		<el-tab-pane name="about">      
 		  <template #label>
 			<span class="custom-tabs-label">
@@ -63,6 +63,13 @@
 		  <template #label>
 			<span class="custom-tabs-label">
 			  <el-link href="#code-systems" :underline="false">Code Systems</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+		<el-tab-pane name="value-sets">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#value-sets" :underline="false">Value Sets</el-link>
 			</span>
 		  </template>
 		</el-tab-pane>
@@ -175,7 +182,7 @@
 					<li class="reveal">Build test cases to ensure we are getting the expected results from a CQL library</li>
 					<li class="reveal">Create a measure using all of the artifacts in the lab workspace</li>
 				</ul>
-				<p class="reveal"><i>Note that we can have multiple artifacts open in separate tabs and easily switch between them.</i></p>
+				<p class="reveal"><i>Note that, in the menu on the left, we can be expand and collapse the sections as needed. And, to the right, we can have multiple artifacts open in separate tabs and easily switch between them.</i></p>
 				<p>
   			</div>
   		</div>
@@ -213,9 +220,7 @@
   		<div class="item-wrapper">
   			<div class="item">
 				<h2 class="large reveal">Code Systems</h2>
-  				<p class="reveal">From the menu on the left, find Code Systems and click on <ellipsis></ellipsis> to the right.</p>
-				<p class="reveal"></p>
-				<p>
+  				<p class="reveal">From the menu on the left, find Code Systems and click on <ellipsis></ellipsis> to the right. Then, we can search for a coding system that has already been published or create a new one. We'll create a new one by adding a name and the URL. We can then drag and drop the code system in the menu on the left into a CQL library on the right.</p>
   			</div>
   		</div>
 	  </div>
@@ -223,6 +228,24 @@
   		<div class="item-wrapper">
   			<div class="item card">
   			  <img src="img/lab-workspace.gif">
+  			</div>
+  		</div>
+	  </div>
+	</div>
+
+  <div class="row spacer">
+  	<div id="value-sets" class="side image reveal reveal_left">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  			  <img src="img/log-in.gif">
+  			</div>
+  		</div>
+	  </div>
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<h2 class="large reveal">Value Sets</h2>
+  				<p class="reveal">From the menu on the left, find Value Sets and click on <ellipsis></ellipsis> to the right. Then, we can search for a coding system that has already been published or create a new one. We'll create a new one by adding a name and the URL.</p>
   			</div>
   		</div>
 	  </div>
