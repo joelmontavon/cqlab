@@ -99,4 +99,5 @@ var app = Vue.createApp({
 app.use(ElementPlus);
 app.component('launch-workspace', launchWorkspace);
 app.component('new-lab', newLab);
+app.component('ellipsis', ellipsis);
 app.mount('#app')

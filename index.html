@@ -52,6 +52,20 @@
 			</span>
 		  </template>
 		</el-tab-pane>
+		<el-tab-pane name="cql-libraries">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#cql-libraries" :underline="false">CQL Libraries</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+		<el-tab-pane name="code-systems">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#code-systems" :underline="false">Code Systems</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
 	  </el-tabs>
 	</el-affix>
 
@@ -63,7 +77,7 @@
 						<ul>
 							<li class="reveal">Build value sets using medical coding terminologies such as SNOMED, ICD-1O, and RxNorm</li>
 							<li class="reveal">Author digital quality measures using industry standards such FHIR and CQL</li>
-							<li class="reveal">Create and execute test cases for quality assurance</li>
+							<li class="reveal">Create and execute test cases to ensure we are getting the expected results from our code</li>
 						</ul>
 					
     			</div>
@@ -140,7 +154,7 @@
   			<div class="item">
 				<h2 class="large reveal">Getting Started</h2>
   				<p class="reveal">The first step is creating a new lab. Each lab contains all of the CQL code libraries, value sets, test cases, etc. for our digital quality measure.</p>
-  				<p class="reveal">To create your first lab, log in by clicking on <launch-workspace></launch-workspace> from the <a href="https://cqlab.io/">CQLab webpage</a>. Sign in for free with your email or Google account. Click on <new-lab></new-lab> and name your lab. We will use asa_discharge_ami for our lab. Now, the lab will be listed in our lab workspaces. To launch the lab workspace, click on the lab name.</p>
+  				<p class="reveal">To create your first lab, log in by clicking on <launch-workspace></launch-workspace> from the <a href="https://cqlab.io/">CQLab webpage</a>. Sign in for free with your email or Google account. Click on <new-lab></new-lab> and name your lab. Now, the lab will be listed in our lab workspaces. To launch the lab workspace, click on the lab name.</p>
   			</div>
   		</div>
 	  </div>
@@ -152,11 +166,60 @@
   		<div class="item-wrapper">
   			<div class="item">
 				<h2 class="large reveal">Lab Workspace</h2>
-  				<p class="reveal">From the lab workspace, we can create CQL libraries. It also allows us to quickly reference various coding systems and create value sets using several different coding systems. The terminology browsers are helpful for searching for codes which can be dropped into value sets. And, value sets can be expanded to any child codes if needed. We can also create test cases to ensure we are getting the expected results from our code. Lastly, all of these artifacts are wrapped up as a measure. We'll get into more detail on creating all of these artifacts.</p>
+  				<p class="reveal">From the menu on the left, we can perform the following functions:
+				<ul class="reveal">
+					<li class="reveal">Create a CQL library</li>
+					<li class="reveal">Add a coding system and drop it into a CQL library</li>
+					<li class="reveal">Search for codes in one of the terminology browsers and drop them into a value set</li>
+					<li class="reveal">Create a value set, with the ability to make it extendable, and drop it into a CQL library</i>
+					<li class="reveal">Build test cases to ensure we are getting the expected results from a CQL library</li>
+					<li class="reveal">Create a measure using all of the artifacts in the lab workspace</li>
+				</ul>
+				<p class="reveal"><i>Note that we can have multiple artifacts open in separate tabs and easily switch between them.</i></p>
+				<p>
   			</div>
   		</div>
 	  </div>
 	  <div id="lab-workspace" class="side image reveal reveal_right">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  			  <img src="img/lab-workspace.gif">
+  			</div>
+  		</div>
+	  </div>
+	</div>
+
+  <div class="row spacer">
+  	<div id="cql-libraries" class="side image reveal reveal_left">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  			  <img src="img/log-in.gif">
+  			</div>
+  		</div>
+	  </div>
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<h2 class="large reveal">CQL Libraries</h2>
+  				<p class="reveal">We need to create our first CQL library. From the menu on the left, find CQL Libraries and click on <ellipsis></ellipsis> to the right. We have the option to add a new library or import one. When we add a new CQL, we give it a name and have the option to make the CQL library pubilc or private and to add some boilerplate code with the patient context as well as some helper libraries. Once the CQL library is created, the code editor will open on the right. We can go ahead and start writing CQL in the code editor but can also drag and drop code systems, value sets, etc. that we create in our lab workspace.</p>
+  				<p class="reveal"><i>Note that we can create folders and then drag and drop CQL libraries into them to keep our lab workspace organized.</i></p>
+  			</div>
+  		</div>
+	  </div>
+	</div>
+	
+  <div class="row spacer">	
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<h2 class="large reveal">Code Systems</h2>
+  				<p class="reveal">From the menu on the left, find Code Systems and click on <ellipsis></ellipsis> to the right.</p>
+				<p class="reveal"></p>
+				<p>
+  			</div>
+  		</div>
+	  </div>
+	  <div id="code-systems" class="side image reveal reveal_right">
   		<div class="item-wrapper">
   			<div class="item card">
   			  <img src="img/lab-workspace.gif">
@@ -169,9 +232,8 @@
 		<div class="main">
 			<div class="item-wrapper">
 				<div class="item">
-				<p class="reveal">We've done it! Congrats on sticking with me! If you are interesting in learning more about these topics, below are some great resources for getting started:</p>
+				<p class="reveal">We've done it! Congrats on sticking with me! If you are interesting in learning more about these topics, below are some great resources:</p>
 				<ul class="reveal" style="text-align: left;">
-					<li><a href="https://www.emeasuretool.cms.gov/sites/default/files/2021-06/MAT%20User%20Guide%20v6.10%20FHIR%20.pdf">Measure Authoring Tool (MAT) User Guide</a></li>
 					<li><a href="https://cql.hl7.org/">CQL Specification</a></li>
 					<li><a href="https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Cooking-with-CQL-Examples">Cooking with CQL Q&A</a></li>
 					<li><a href="https://github.com/cqframework/cqf-exercises">CQL Exercises</a></li>
@@ -192,6 +254,7 @@
 <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
 <script src="js/launch-workspace.vue"></script>
 <script src="js/new-lab.vue"></script>
+<script src="js/ellipsis.vue"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
