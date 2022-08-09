@@ -1,0 +1,197 @@
+<html>
+  <head>
+	<link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/theme-chalk/index.css" />
+    <link rel="stylesheet" href="style/style.css">
+  </head>
+  <body>
+	<div id="app">
+    <div>
+      <a href="https://www.linkedin.com/in/joel-montavon-704808a/" target="_blank"><img class="icon" width="60" height="60" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" style="position: absolute; right: 80px; top: 10px;"></img></a>
+      <a href="https://github.com/joelmontavon/flu-vax-cql" target="_blank"><img class="icon" width="80" height="80" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="position: absolute; right: 0px; top: 0px;"></img></a>
+    </div>
+
+    <h1 class="header reveal center">The CQLab Crash Course</h1>
+
+    <div class="row spacer">
+	     <div class="item-wrapper" style="width: 500px; align-content: center;">
+		       <div class="item reveal">
+			          <img src="img/coin-flip.jpg" alt="">
+		       </div>
+	     </div>
+    </div>
+
+
+	<el-affix :offset="180">
+	  <el-tabs v-model="activeSection" @tab-click="handleClick" :tab-position="'right'" style="height: 200px" class="demo-tabs">
+		<el-tab-pane name="about">      
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#about" :underline="false">About</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+		<el-tab-pane label="specs" name="specs">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#specs" :underline="false">Specifications</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+		<el-tab-pane name="getting-started">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#getting-started" :underline="false">Getting Started</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+		<el-tab-pane name="lab-workspace">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#lab-workspace" :underline="false">Lab Workspace</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+	  </el-tabs>
+	</el-affix>
+
+    <div class="row spacer">
+    	<div class="main">
+    		<div class="item-wrapper">
+    			<div class="item">
+    				<p class="reveal"><a href="https://cqlab.io/">CQLab</a> is a single platform for measure developers to:</p>
+						<ul>
+							<li class="reveal">Build value sets using medical coding terminologies such as SNOMED, ICD-1O, and RxNorm</li>
+							<li class="reveal">Author digital quality measures using industry standards such FHIR and CQL</li>
+							<li class="reveal">Create and execute test cases for quality assurance</li>
+						</ul>
+					
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+  <div class="row spacer">
+    <div id="about" class="side image reveal reveal_left">
+      <div class="item-wrapper">
+        <div class="item card">
+			<img src="img/medicare-card.png"></img>
+        </div>
+      </div>
+  	</div>
+  	<div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+  				<h2 class="large reveal">About</h2>
+				<p class="reveal">This tutorial will walk you thru the steps to creating a digital quality measure with CQLab. We will be using a measure stewarded by the Centers for Medicare and Medicaid (CMS) that looks at the percentage of acute myocardial infarction (AMI) patients who are prescribed aspirin at hospital discharge. Further information can be found the at the <a href="https://www.qualityforum.org/QPS/0142">measure's page</a> on the National Quality Forum website.</p>
+				<h2 class="large reveal">Rationale</h2>
+  				<p class="reveal">Aspirin therapy in patients who have suffered an acute myocardial infarction reduces the risk of adverse events and mortality. Studies have demonstrated that aspirin can reduce this risk by 20%. National guidelines strongly recommend long-term aspirin for the secondary prevention of subsequent cardiovascular events in eligible older patients discharged after AMI.  The initiation and indefinite continuation of aspirin is considered a Class I recommendation in ACC/AHA UA/NSTEMI and STEMI guidelines.</p>
+  		  </div>
+  	  </div>
+    </div>
+  </div>
+
+  <div class="row spacer">
+    <div class="main">
+		    <div class="item-wrapper">
+    			<div class="item">
+    				<h2 class="large reveal">Measure Specifications</h2>
+    				<p class="reveal"><b>Denominator</b>: Patients with a principal diagnosis code of AMI</p>
+    				<p class="reveal"><b>Exclusions</b>:
+    				<ul class="reveal">
+    					<li>&gt;18 years of age</li>
+    					<li>Patients who have a length of stay greater than 120 days</li>
+						<li>Patients enrolled in clinical trials</li>
+						<li>Discharged to another hospital</li>
+						<li>Expired</li>
+						<li>Left against medical advice</li>
+						<li>Discharged to home for hospice care</li>
+						<li>Discharged to a health care facility for hospice care</li>
+						<li>Patients with comfort measures only documented</li>
+						<li>Patients with a documented reason for no aspirin at discharge</li>
+    				</ul>
+					
+    				</p class="reveal">
+    				<p class="reveal"><b>Numerator</b>: AMI patients who are prescribed aspirin at hospital discharge</p>
+    			</div>
+		    </div>
+	  </div>
+       <div id="specs" class="side image reveal reveal_right">
+         <div class="item-wrapper">
+		       <div class="item">
+			       <img width="500" src="img/ruler.jpg" alt="">
+		       </div>
+	       </div>
+	     </div>
+    </div>
+
+	  <h1 class="header reveal center">CQLab</h2>
+
+  <div class="row spacer">
+  	<div id="getting-started" class="side image reveal reveal_left">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  			  <img src="img/log-in.gif">
+  			</div>
+  		</div>
+	  </div>
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<h2 class="large reveal">Getting Started</h2>
+  				<p class="reveal">The first step is creating a new lab. Each lab contains all of the CQL code libraries, value sets, test cases, etc. for our digital quality measure.</p>
+  				<p class="reveal">To create your first lab, log in by clicking on <launch-workspace></launch-workspace> from the <a href="https://cqlab.io/">CQLab webpage</a>. Sign in for free with your email or Google account. Click on <new-lab></new-lab> and name your lab. We will use asa_discharge_ami for our lab. Now, the lab will be listed in our lab workspaces. To launch the lab workspace, click on the lab name.</p>
+  			</div>
+  		</div>
+	  </div>
+	</div>
+	
+  <div class="row spacer">
+
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<h2 class="large reveal">Lab Workspace</h2>
+  				<p class="reveal">From the lab workspace, we can create CQL libraries. It also allows us to quickly reference various coding systems and create value sets using several different coding systems. The terminology browsers are helpful for searching for codes which can be dropped into value sets. And, value sets can be expanded to any child codes if needed. We can also create test cases to ensure we are getting the expected results from our code. Lastly, all of these artifacts are wrapped up as a measure. We'll get into more detail on creating all of these artifacts.</p>
+  			</div>
+  		</div>
+	  </div>
+	  <div id="lab-workspace" class="side image reveal reveal_right">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  			  <img src="img/lab-workspace.gif">
+  			</div>
+  		</div>
+	  </div>
+	</div>
+	
+  	<div class="row spacer">
+		<div class="main">
+			<div class="item-wrapper">
+				<div class="item">
+				<p class="reveal">We've done it! Congrats on sticking with me! If you are interesting in learning more about these topics, below are some great resources for getting started:</p>
+				<ul class="reveal" style="text-align: left;">
+					<li><a href="https://www.emeasuretool.cms.gov/sites/default/files/2021-06/MAT%20User%20Guide%20v6.10%20FHIR%20.pdf">Measure Authoring Tool (MAT) User Guide</a></li>
+					<li><a href="https://cql.hl7.org/">CQL Specification</a></li>
+					<li><a href="https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Cooking-with-CQL-Examples">Cooking with CQL Q&A</a></li>
+					<li><a href="https://github.com/cqframework/cqf-exercises">CQL Exercises</a></li>
+					<li><a href="https://build.fhir.org/index.html">FHIR Specification</a></li>
+					<li><a href="https://chat.fhir.org/login/">FHIR Community</a></li>
+				</ul>
+				<!--<img src="http://hl7.org/fhir/2016may/assets/images/fhir-logo-www.png"></img>-->
+				</div>
+			</div>
+		</div>
+  </div>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="https://unpkg.com/element-plus"></script>
+<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/AttrPlugin.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+<script src="js/launch-workspace.vue"></script>
+<script src="js/new-lab.vue"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
